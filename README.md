@@ -8,11 +8,9 @@ Control Esquisitos é um aplicativo que permite controlar dispositivos Bluetooth
 - Interface intuitiva e fácil de usar.
 - Suporte para conexão e emparelhamento de dispositivos Bluetooth.
 - Personalização das configurações de controle.
-- [Inserir outras funcionalidades aqui]
 
 ## Como Usar
-
-1. [Baixe](https://link-para-o-app.com) o aplicativo Control Esquisitos em seu dispositivo Android ou iOS.
+1. Faça um pool request e execulte o projeto.
 2. Abra o aplicativo e siga as instruções para emparelhar o dispositivo Bluetooth que deseja controlar.
 3. Escolha o dispositivo na lista de dispositivos pareados.
 4. Comece a usar o aplicativo para controlar o dispositivo de forma remota.
@@ -31,16 +29,11 @@ Estamos abertos a contribuições de desenvolvedores e entusiastas que desejam m
 
 ## Requisitos
 
-- Android 6.0 ou superior
-- iOS 10 ou superior
+- Android 8.0 ou superior
 - [Inserir outros requisitos aqui]
 
 ## Licença
 
 Este projeto é licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
-
-## Contato
-
-Se você tiver alguma dúvida ou sugestão, entre em contato conosco em [seu-email@gmail.com] ou abra uma issue neste repositório.
 
 Agradecemos por usar o Control Esquisitos!
