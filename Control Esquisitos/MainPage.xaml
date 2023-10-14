@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Control_Esquisitos.Plataforms.Android.MainPage" xmlns:model="clr-namespace:Control_Esquisitos.Model"
+             BackgroundColor="#00EE76" Shell.BackgroundColor="#008B45"
+             >
+    
+    <Shell.TitleView>
+        <VerticalStackLayout>
+            <Label Text="   RemoteCar Control" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold"
+               TextColor="White" Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </Shell.TitleView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+
+        <VerticalStackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="End">
+
+            <HorizontalStackLayout Spacing="0" HorizontalOptions="Center" Grid.Column="0"
+                                   Grid.Row="0" Margin="20">
+                
+                <Button WidthRequest="90" HeightRequest="80" Text="{Static model:IconFont.ArrowLeft}" FontFamily="fa-solid"
+                        FontAttributes="Bold" FontSize="30" BackgroundColor="#00BFFF" TextColor="White"
+                         Clicked="ButtonLeft"/>
+                
+                <Button WidthRequest="90" HeightRequest="80" BackgroundColor="Transparent" IsEnabled="False"/>
+                
+                <Button WidthRequest="90" HeightRequest="80" Text="{Static model:IconFont.ArrowRight}" FontFamily="fa-solid"
+                        FontAttributes="Bold" FontSize="30" BackgroundColor="#00BFFF" TextColor="White"
+                        Clicked="ButtonRight" 
+                        />
+                
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Padding="20" BackgroundColor="#00CD66" Grid.Column="1">
+
+            <Button WidthRequest="80" HeightRequest="40" Text="{Static model:IconFont.Wifi}" FontFamily="fa-solid"
+                        FontAttributes="Bold" FontSize="20"  x:Name="ScanButton"
+                    BackgroundColor="#00BFFF" Clicked="ScanButton_Clicked" TextColor="White" Margin="0,0,0,0"/>
+
+            <Grid BackgroundColor="Transparent" HeightRequest="180">
+                <ActivityIndicator IsRunning="true" Margin="0,0,0,0" Color="Black" HeightRequest="50" x:Name="indicator" IsVisible="false"/>
+                <ListView x:Name="listView" ItemSelected="listDevice_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Spacing="10" Grid.Column="2" VerticalOptions="End" HorizontalOptions="End">
+
+            <Button WidthRequest="80" HeightRequest="90" Text="{Static model:IconFont.AnglesUp}" FontFamily="fa-solid"
+                    FontAttributes="Bold" Margin="20" HorizontalOptions="End"
+                    FontSize="30" BackgroundColor="#00BFFF" TextColor="White" Clicked="ButtonAccelerator"
+                    />
+            
+            <Button WidthRequest="80" HeightRequest="90" Text="{Static model:IconFont.AnglesDown}" FontFamily="fa-solid"
+                    FontAttributes="Bold" Margin="20" HorizontalOptions="End" BackgroundColor="#00BFFF" TextColor="White"
+                    FontSize="30" Clicked="ButtonBrake"
+                    />
+        </VerticalStackLayout>
+        <Button Grid.Column="2" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Margin="40" VerticalOptions="End"
+                CornerRadius="50" BackgroundColor="OrangeRed" Text="stop" TextColor="White" FontAttributes="Bold"
+                Clicked="StopCar"/>
+        
+        <Button Grid.Column="2" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Margin="40" VerticalOptions="Start"
+                CornerRadius="50" BackgroundColor="DarkBlue" Text="{Static model:IconFont.HeartCircleBolt}" TextColor="White" FontAttributes="Bold"
+                Clicked="alternarCadencia" x:Name="speedmodeButton" FontFamily="fa-solid" FontSize="20"/>
+        
+        <Button Grid.Column="0" HeightRequest="40" WidthRequest="100" HorizontalOptions="Start" Margin="30" VerticalOptions="Start"
+        BackgroundColor="DodgerBlue" Text="{Static model:IconFont.RightLeft}" TextColor="White" FontAttributes="Bold"
+        Clicked="Button_Clicked_manobra1" FontFamily="fa-solid" Padding="0" />
+    </Grid>
+
+</ContentPage>

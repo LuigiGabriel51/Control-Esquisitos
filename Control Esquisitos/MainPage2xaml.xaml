@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Control_Esquisitos.Plataforms.Android.MainPage2xaml"
+             Shell.BackgroundColor="#008B45" xmlns:model="clr-namespace:Control_Esquisitos.Model" 
+             >
+    <Shell.TitleView>
+        <VerticalStackLayout>
+            <Label Text="Bluetooth Terminal" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold"
+                   TextColor="White" Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </Shell.TitleView>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Entry Placeholder="Mande um comando para o dispositivo" HorizontalOptions="Center" VerticalOptions="Center"
+               WidthRequest="300" HeightRequest="50" x:Name="dados" Keyboard="Numeric"/>
+        
+        <Button WidthRequest="140" HeightRequest="40" Text="{Static model:IconFont.Scan}" FontFamily="fa-solid"
+                FontAttributes="Bold" FontSize="20"  x:Name="ScanButton" Grid.Row="2" HorizontalOptions="Start"
+            BackgroundColor="#00BFFF" Clicked="ScanButton_Clicked" TextColor="White" Margin="0,0,0,0"/>
+        
+        <Button WidthRequest="140" HeightRequest="40" Text="Enviar" FontFamily="fa-solid"
+                FontAttributes="Bold" FontSize="20"  x:Name="enviar" Grid.Row="2" HorizontalOptions="End"
+            BackgroundColor="#00BFFF"  TextColor="White" Margin="0,0,0,0" Clicked="enviar_Clicked"/>
+
+        <Grid BackgroundColor="Transparent" HeightRequest="200" WidthRequest="300" Grid.Row="1">
+            <ActivityIndicator IsRunning="true" Margin="0,0,0,0" Color="Black" HeightRequest="50" x:Name="indicator" IsVisible="false"/>
+            <ListView x:Name="listView" ItemSelected="listDevice_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

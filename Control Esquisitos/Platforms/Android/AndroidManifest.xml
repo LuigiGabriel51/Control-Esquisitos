@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<!-- Solicite permissões herdadas de Bluetooth em dispositivos mais antigos. -->
+    <uses-permission android:name="android.permission.BLUETOOTH"
+					 />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <!-- Necessário somente se seu aplicativo procurar por dispositivos Bluetooth.
+         Você deve adicionar um atributo a esta permissão ou declarar o
+         Permissão ACCESS_FINE_LOCATION, dependendo dos resultados quando você
+         verifique o uso da localização em seu aplicativo. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+                     android:usesPermissionFlags="neverForLocation" />
+
+    <!-- Necessário apenas se seu aplicativo tornar o dispositivo detectável por Bluetooth
+         dispositivos. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Necessário somente se seu aplicativo se comunicar com o Bluetooth já emparelhado
+         dispositivos. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>

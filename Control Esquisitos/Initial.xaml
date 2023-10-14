@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Control_Esquisitos.Initial"
+             Title="Bluettoth">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Text="Escolha o tipo de controle" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"
+               FontSize="Title"/>
+        <ImageButton Source="controle" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End"
+                     Clicked="ImageButton_Clicked" HeightRequest="150" WidthRequest="200"/>
+        <Label HorizontalOptions="Center" FontSize="Body" Text="Bluetooth Teminal" Grid.Row="2" VerticalTextAlignment="Start" 
+               Margin="50" FontAttributes="Bold"/>
+        <Label HorizontalOptions="Center" FontSize="Body" Text="Bluetooth Controle" Grid.Row="1" VerticalTextAlignment="Center" 
+               Margin="50" FontAttributes="Bold"/>
+        <ImageButton Source="codigo" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"
+                     Clicked="ImageButton_Clicked_1" HeightRequest="150" WidthRequest="200"/>
+    </Grid>
+</ContentPage>
